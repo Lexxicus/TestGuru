@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :test, only: %i[index]
+  before_action :test, only: %i[index create]
   before_action :question, only: %i[destroy show]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -11,13 +11,17 @@ class QuestionsController < ApplicationController
   def new; end
 
   def create
-    Question.create(question_params)
-    redirect_to action: 'index', test_id: params[:test_id]
+    @question = @test.questions.new(question_params)
+    if @question.save
+      redirect_to :test_questions
+    else
+      render :new
+    end
   end
 
   def destroy
     @question.destroy
-    redirect_to action: 'index', test_id: params[:test_id]
+    redirect_to request.referrer
   end
 
   private
@@ -31,7 +35,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def rescue_with_question_not_found

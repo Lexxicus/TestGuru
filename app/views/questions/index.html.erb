@@ -1,5 +1,4 @@
 <h1>Test title: <%= @test.title %></h1>
-<br>
 <%= link_to 'Create question', new_test_question_path %>
 <br>
 <table frame>
@@ -10,7 +9,7 @@
     <th>test_id</th>
   </tr>
 
-  <%= @test.questions.each do |q| %>
+  <% @test.questions.each do |q| %>
     <tr>
       <td><%= q.id %></td>
       <td><%= q.body%></td>
