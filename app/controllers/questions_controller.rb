@@ -1,23 +1,40 @@
 class QuestionsController < ApplicationController
-  def index
-    respond_to do |format|
-      format.html { render plain: 'All questions' }
-      format.json { render json: { tests: Question.where(test_id: 2) } }
-    end
-  end
+  before_action :test, only: %i[index]
+  before_action :question, only: %i[destroy show]
 
-  def show
-    respond_to do |format|
-      format.html { render plain: 'Question' }
-      format.json { render json: { tests: Question.find(params[:id]) } }
-    end
-  end
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-  def new
-    render plain: 'Create new question'
+  def index; end
+
+  def show; end
+
+  def new; end
+
+  def create
+    Question.create(question_params)
+    redirect_to action: 'index', test_id: params[:test_id]
   end
 
   def destroy
-    render plain: 'Question deleted'
+    @question.destroy
+    redirect_to action: 'index', test_id: params[:test_id]
+  end
+
+  private
+
+  def test
+    @test = Test.find(params[:test_id])
+  end
+
+  def question
+    @question = Question.find(params[:id])
+  end
+
+  def question_params
+    params.require(:question).permit(:body, :test_id)
+  end
+
+  def rescue_with_question_not_found
+    render plain: 'Question was not found'
   end
 end
