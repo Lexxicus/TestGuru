@@ -1,0 +1,16 @@
+<table frame>
+  <tr>
+    <th>id</th>
+    <th>Title</th>
+    <th>created at</th>
+  </tr>
+
+  <%= @tests.each do |t| %>
+    <tr>
+      <td><%= t.id %></td>
+      <td><%= t.title%></td>
+      <td><%= t.created_at %></td>
+    </tr>
+
+  <% end %>
+ </table>

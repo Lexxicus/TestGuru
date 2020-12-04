@@ -1,12 +1,11 @@
 class TestsController < ApplicationController
-  def index
-    # render json: { tests: Test.all }
-    # render file: 'public/about.html', layout: false
-    # byebug
+  before_action :tests, only:  %i[index]
 
-    respond_to do |format|
-      format.html { render plain: 'All tests' }
-      format.json { render json: { tests: Test.all } }
-    end
+  def index; end
+
+  private
+
+  def tests
+    @tests = Test.all
   end
 end
