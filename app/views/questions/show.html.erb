@@ -3,7 +3,4 @@
 <ul>
   <li>Id: <%= @question.id %></li>
   <li>Test_id: <%= @question.test_id %></li>
-  <%= link_to 'Destroy',question_path(@question.id),
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' } %>
 </ul>
