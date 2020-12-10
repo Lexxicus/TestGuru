@@ -4,3 +4,6 @@
   <li>Id: <%= @question.id %></li>
   <li>Test_id: <%= @question.test_id %></li>
 </ul>
+
+<%= link_to 'Back', test_questions_url(@question.test_id) %>
+<%= link_to 'Edit', edit_question_url(@question) %>
