@@ -1,6 +1,6 @@
 
 <tr>
-  <td><%= link_to test.title, test_questions_url(test)%></td>
+  <td><%= link_to test.title, test_path(test)%></td>
   <td><%= test.category.title %></td>
   <td><%= test.level %></td>
   <td><%= test.questions.count %></td>
@@ -11,4 +11,5 @@
                       method: :delete,
                       data: { confirm: 'Are you sure?' } %>
   </td>
+  <td><%= button_to 'Start', start_test_path(test) %></td>
 </tr>
