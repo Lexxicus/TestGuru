@@ -1,0 +1,9 @@
+<div>
+  <h1> The <%= @test_passage.test.title %> was Completed!!! </h1>
+    <% if @test_passage.success? %>
+      <h2> Congratulation! You pass the test, <span id="pass_test"> <%= @test_passage.percent_of_correct_answers %>% </span> answers correct </h2>
+    <% else %>
+      <h2> Sorry you failed test, <span id="failed_test"> <%= @test_passage.percent_of_correct_answers %>% </span> answers correct! </h2>
+    <% end %>
+</div>
+<%= link_to "Back to tests list", tests_path %>

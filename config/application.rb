@@ -10,7 +10,7 @@ module TestGuru
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
-    I18n.available_locales = [:en, :ru]
+    I18n.available_locales = %i[en ru]
     config.i18n.default_locale = :ru
     config.time_zone = 'Ekaterinburg'
 
