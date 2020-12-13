@@ -10,7 +10,18 @@
   </head>
 
   <body>
-
+    <ul class="menu-main">
+      <li> <%= link_to 'TestGuru', root_path %> </li>
+      <% if logged_in? %>
+        <li> <a> Welcome, <b><%= current_user.email%></b> </a></li>
+        <li> <%= link_to 'Log out', session_path(current_user),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %> </li>
+        <% else %>
+          <li> <%= link_to 'Signup', signup_path %> </li>
+          <li> <%= link_to 'Login', login_path %> </li>
+      <% end %>
+     </ul>
     <div class="content">
       <%= yield %>
     </div>
