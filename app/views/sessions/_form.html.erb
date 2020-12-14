@@ -1,0 +1,16 @@
+<%= form_with url: sessions_path, local: true do |form| %>
+  <%= render 'shared/flash_message'%>
+  
+  <p>
+    <%= form.label :email %>
+    <%= form.text_field :email, placeholder: 'Email', id: :user_email %>
+  </p>
+
+  <p>
+    <%= form.label :password %>
+    <%= form.password_field :password, placeholder: 'Password', id: :password %>
+  </p>
+
+  <p><%= form.submit 'Enter' %></p>
+  <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<% end %>
