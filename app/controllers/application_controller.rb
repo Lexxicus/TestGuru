@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: %i[new create]
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?
 
