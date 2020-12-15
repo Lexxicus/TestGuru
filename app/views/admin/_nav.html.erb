@@ -1,0 +1,9 @@
+<ul class="menu-main">
+  <li> <%= link_to 'TestGuru | Admin panel', root_path %> </li>
+  <li> <%= link_to 'Tests', admin_tests_path %> </li>
+  <li> <%= link_to 'Create test', new_admin_test_path %> </li>
+  <li> <a> Welcome, <b><%= current_user.first_name%></b> <b><%= current_user.last_name%></b></a></li>
+  <li> <%= link_to 'Log out', destroy_user_session_path,
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %> </li>
+</ul>
