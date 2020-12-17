@@ -144,3 +144,4 @@ ru:
   
   create_new_question: "Создать новый вопрос для теста %{test}"
   edit_question: "Редактировать вопрос для теста %{test}"
+  
