@@ -1,9 +1,9 @@
 <div>
-  <h1> The <%= @test_passage.test.title %> was Completed!!! </h1>
+  <h1><%= t('.header', title: @test_passage.test.title) %></h1>
     <% if @test_passage.success? %>
-      <h2> Congratulation! You pass the test, <span id="pass_test"> <%= @test_passage.percent_of_correct_answers %>% </span> answers correct </h2>
+      <h2><%= t('.success', percent: content_tag(:span, @test_passage.percent_of_correct_answers, id="pass_test")).html_safe %></h2>
     <% else %>
-      <h2> Sorry you failed test, <span id="failed_test"> <%= @test_passage.percent_of_correct_answers %>% </span> answers correct! </h2>
+      <h2><%= t('.defeat', percent: content_tag(:span, @test_passage.percent_of_correct_answers, id="failed_test")).html_safe %></h2>
     <% end %>
 </div>
-<%= link_to "Back to tests list", tests_path %>
+<%= link_to t('helpers.links.back'), tests_path %>

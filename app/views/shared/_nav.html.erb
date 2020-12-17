@@ -1,21 +1,21 @@
 <ul class="menu-main">
-  <li> <%= link_to 'TestGuru', root_path %> </li>
+  <li> <%= link_to t('.test_guru'), root_path %> </li>
   <% if user_signed_in? %>
     <% if current_user.admin? %>
-      <li> <%= link_to 'Tests', admin_tests_path %> </li>
-      <li> <%= link_to 'Create test', new_admin_test_path %> </li>
-      <li> <a> Welcome, <b><%= current_user.first_name%></b> <b><%= current_user.last_name%></b></a></li>
-      <li> <%= link_to 'Log out', destroy_user_session_path,
+      <li> <%= link_to t('.tests'), admin_tests_path %> </li>
+      <li> <%= link_to t('.create_test'), new_admin_test_path %> </li>
+      <li> <%= link_to t('.welcome_admin', all_name: content_tag(:b, current_user.first_name)).html_safe %> </li>
+      <li> <%= link_to t('.logout'), destroy_user_session_path,
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %> </li>
     <% else %>
-      <li> <a> Welcome, <b><%= current_user.email%></b> </a></li>
-      <li> <%= link_to 'Log out', destroy_user_session_path,
+      <li> <%= link_to t('.welcome_user', all_name: content_tag(:b, current_user.email)).html_safe %> </li>
+      <li> <%= link_to t('.logout'), destroy_user_session_path,
                     method: :delete,
-                    data: { confirm: 'Are you sure?' } %> </li>
+                    data: { confirm: t('helpers.confirm') } %> </li>
     <% end %>
     <% else %>
-      <li> <%= link_to 'Signup', new_user_registration_path %> </li>
-      <li> <%= link_to 'Login', new_user_session_path %> </li>
+      <li> <%= link_to t('.signup'), new_user_registration_path %> </li>
+      <li> <%= link_to t('.login'), new_user_session_path %> </li>
   <% end %>
 </ul>
