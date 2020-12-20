@@ -25,7 +25,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.my_tests.new(test_params)
 
     if @test.save
-      redirect_to admin_test_path(@test), notice: 'Test sucefull created!!'
+      redirect_to admin_test_path(@test), notice: t('.success')
     else
       render :new
     end
@@ -34,11 +34,6 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
     redirect_to request.referrer
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
   end
 
   private

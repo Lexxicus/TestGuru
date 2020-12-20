@@ -1,9 +1,9 @@
 module QuestionsHelper
   def question_header(question)
     if question.new_record?
-      "<h2>Create new question for  #{@test.title} test</h2>".html_safe
+      I18n.t('.create_new_question', test: @test.title)
     else
-      "<h2>Edit question for #{question.test.title} test</h2>".html_safe
+      I18n.t('.edit_question', test: question.test.title)
     end
   end
 end

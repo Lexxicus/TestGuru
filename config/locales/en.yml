@@ -31,3 +31,105 @@
 
 en:
   hello: "Hello world"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+  nav:
+      create_test: "Create test"
+      tests: "Test management"
+      welcome_admin: "Welcome, %{all_name}"
+      welcome_user: "Welcome, %{email}"
+      test_guru: "TestGuru"
+      login: "Login"
+      logout: "Log out"
+      signup: "Signup"
+
+  tests:
+    index:
+      header:  "Tests list"
+      title: "Title"
+      category: "Category"
+      level: "Level"
+      questions: "Quantity questions"
+  
+  admin:
+    tests:
+      index:
+        header: "Tests list"
+        title: "Test title"
+        category: "Test category"
+        level: "Test level"
+        questions: "Questions qty"
+        manage: "Manage"
+      show:
+        header: "Test %{title}"
+        question_column: "Question"
+        manage_column:  "Managment"
+      new:
+        header: "Create new test"
+      edit:
+        header: "Edit test %{title}"
+      create:
+        success: "Test was successfully created."
+    questions:
+      show:
+        header: "Question for %{title}"
+        answer: "Answer"
+      create:
+        success: "Question added"
+      update:
+        success: "Question updated"
+      destroy:
+        success: "Question deleted"  
+    answers:
+      new:
+        header: "New answer"
+      edit:
+        header: "Edit answer"
+      create:
+        success: "Answer added"
+      update:
+        success: "Answer updated"
+      destroy:
+        success: "Answer deleted"
+    base:
+      admin_required:
+        message: "Only the administrator has access to this section"
+
+  helpers:
+    links:
+      back: "Back"
+      edit: "Edit"
+      show: "Show"
+      delete: "Destroy"
+      create_test: "Create test"
+      create_question: "New answer"
+      create_answer: "Create answer"
+    submit:
+      create: "Create %{model}"
+      update: "Update %{model}"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        body: "Question"
+      answer:
+        body: "Answer"
+    confirm: "Are you sure"
+    buttons:
+      start: "Start"
+      next: "Next"
+    select:
+      prompt: "Please select"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the TestGuru test!"
+
+  create_new_question: "Create new question for %{test}"
+  edit_question: "Update question for %{test}"
