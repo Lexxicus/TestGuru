@@ -1,9 +1,14 @@
-<div>
-  <h1><%= t('.header', title: @test_passage.test.title) %></h1>
+<div class="card tm-3">
+  <div class="card-header">
+    <h2 class="float-left "><%= t('.header', title: @test_passage.test.title) %></h2>
+  </div>
+  <div class="card-body">
     <% if @test_passage.success? %>
-      <h2><%= t('.success', percent: content_tag(:span, @test_passage.percent_of_correct_answers, id="pass_test")).html_safe %></h2>
+      <h2><%= t('.success', percent: content_tag(:span, @test_passage.percent_of_correct_answers, class: "text-success")).html_safe %></h2>
     <% else %>
-      <h2><%= t('.defeat', percent: content_tag(:span, @test_passage.percent_of_correct_answers, id="failed_test")).html_safe %></h2>
+      <h2><%= t('.defeat', percent: content_tag(:span, @test_passage.percent_of_correct_answers, class: "text-danger")).html_safe %></h2>
     <% end %>
+    <%= link_to t('helpers.links.back'), tests_path, class: 'btn btn-light' %>
+  </div>
 </div>
-<%= link_to t('helpers.links.back'), tests_path %>
+

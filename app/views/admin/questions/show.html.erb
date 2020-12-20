@@ -1,14 +1,26 @@
-<h1><%= t('.header', title: @question.test.title) %></h1>
+<div class="card mb-3">
+  <div class="card-header">
+    <h2 class="float-left "><%= t('.header', title: @question.test.title) %></h2>
+  </div>
+  <div class="card-body">
 
-<p>
-  <%= @question.body %>
-</p>
+    <%= link_to t('helpers.links.create_answer'), new_admin_question_answer_path(@question), class: 'btn btn-light' %>
+    <b><%= @question.body %></b>
+    <table class="table">
+      <thead class="thead-light">
+      <tr>
+        <th scope="col"> <%= t('.answer') %> </th>
+        <th scope="col" colspan = 3> <%= t('.manage_column') %> </th>
+      </tr>
+ 
+      <%= render @question.answers %>
 
-<h2><%= t('.answer') %></h2>
+    </table>
+    
+  </div>
+</div>
 
-<%= link_to t('helpers.links.create_answer'), new_admin_question_answer_path(@question) %>
-
-<%= render @question.answers %>
-
-<%= link_to t('helpers.links.edit'), edit_admin_question_path(@question) %>
-<%= link_to t('helpers.links.back'), admin_test_path(@question.test_id) %>
+<div class="btn-group">
+  <%= link_to t('helpers.links.edit'), edit_admin_question_path(@question), class: 'btn btn-light' %>
+  <%= link_to t('helpers.links.back'), admin_test_path(@question.test_id), class: 'btn btn-light' %>
+</div>

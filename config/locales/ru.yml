@@ -72,6 +72,7 @@ ru:
       show:
         header: "Вопрос теста %{title}"
         answer: "Ответ"
+        manage_column: "Управление"
       create:
         success: "Вопрос добавлен"
       update:
@@ -141,6 +142,7 @@ ru:
       login: "Войти"
       logout: "Выйти"
       signup: "Зарегистрироваться"
+      admin_panel: "Панель администратора"
   
   create_new_question: "Создать новый вопрос для теста %{test}"
   edit_question: "Редактировать вопрос для теста %{test}"
