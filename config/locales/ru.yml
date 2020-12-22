@@ -48,6 +48,9 @@ ru:
     show:
       header: "Вы проходите тест %{title}"
       test_info: "Всего вопросов: %{total}, вы отвечаете на: %{current}"
+    gist:
+      success: "Gist успешно сохранён!"
+      failure: "Вовремя сохранения gist произошла ошибка"
 
   admin:
     tests:
@@ -143,6 +146,7 @@ ru:
       logout: "Выйти"
       signup: "Зарегистрироваться"
       admin_panel: "Панель администратора"
+      user_tests: "Доступные тесты"
   
   create_new_question: "Создать новый вопрос для теста %{test}"
   edit_question: "Редактировать вопрос для теста %{test}"

@@ -47,6 +47,7 @@ en:
       logout: "Log out"
       signup: "Signup"
       admin_panel: "Administration panel"
+      user_tests: "Availabel tests"
 
   tests:
     index:
@@ -132,6 +133,18 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+  
+  test_passages:
+    result:
+      header: "Test %{title} complted."
+      success: "Congratilution you complete test, %{percent}% correct answer"
+      defeat: "You didn't past the test, %{percent}% correct answer"
+    show:
+      header: "Test %{title}"
+      test_info: "Total question: %{total}, current question: %{current}"
+    gist:
+      success: "Gist was succeffully created!"
+      failure: "An error occurred while saving gist"
 
   create_new_question: "Create new question for %{test}"
   edit_question: "Update question for %{test}"

@@ -20,6 +20,9 @@
           </li>
         <% else %>
           <li class="nav-item">
+            <%= link_to t('.user_tests'), root_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
             <a class="nav-link"><%= t('.welcome_user', email: current_user.email)%></a>
           </li>
         <% end %>
