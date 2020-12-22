@@ -1,17 +1,26 @@
-<%= form_with(model: [:admin, @question, @answer], local: true) do |form| %>
+<div class="row justify-content-left mt-3 mb-3">
+  <div calss="col col-md-4">
+    <div class="card-body">
+      <%= form_with(model: [:admin, @question, @answer], local: true) do |form| %>
+        <%= render 'shared/errors', resource: @answer %>
+        <div class="form-group">
+          <p>
+            <%= form.label :body %>
+            <%= form.text_field :body, class: 'form-control'%>
+          </p>
 
-  <%= render 'shared/errors', resource: @answer %>
+          <div class="form-check">
+            <%= form.label :correct, calss: 'form-check-label' do %>
+              <%= form.check_box :correct, class: 'form-check-input' %>
+              Correct
+            <% end %>
+          </div>
 
-  <div class="actions">
-    <p>
-      <%= form.label :body %>
-      <%= form.text_field :body, id: :answer_body, rows: 7, cols: 60 %>
-    </p>
-
-    <p>
-    <%= form.label :correct %>
-    <%= form.check_box :correct, id: :answer_correct %>
-  </p>
-    <%= form.submit %>
+          <div class="form-group">
+            <%= form.submit class: 'btn btn-light' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

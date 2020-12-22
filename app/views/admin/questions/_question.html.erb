@@ -1,11 +1,11 @@
 <tr>
   <td><%= question.body%></td>
   <td>
-    <%= link_to t('helpers.links.show'), admin_question_path(question.id) %>
-    <%= link_to t('helpers.links.edit'), edit_admin_question_path(question) %>
+    <%= link_to t('helpers.links.show'), admin_question_path(question.id), class: 'btn btn-light' %>
+    <%= link_to t('helpers.links.edit'), edit_admin_question_path(question), class: 'btn btn-light' %>
     <%= link_to t('helpers.links.delete'), admin_question_path(question),
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %>
+                data: { confirm: 'Are you sure?' }, class: 'btn btn-light' %>
   </td>
 </tr>
  

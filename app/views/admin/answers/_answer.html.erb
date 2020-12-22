@@ -1,7 +1,9 @@
-<li>
-  <%= answer.body %>
-  <%= link_to t('helpers.links.edit'), edit_admin_answer_path(answer) %>
+<tr>
+  <td><%= answer.body %></td>
+  <td>
+  <%= link_to t('helpers.links.edit'), edit_admin_answer_path(answer), class: 'btn btn-light' %>
   <%= link_to t('helpers.links.delete'), admin_answer_path(answer),
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %>
- </li>
+                data: { confirm: 'Are you sure?' }, class: 'btn btn-light' %>
+  </td>
+</tr>

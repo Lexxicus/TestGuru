@@ -46,6 +46,7 @@ en:
       login: "Login"
       logout: "Log out"
       signup: "Signup"
+      admin_panel: "Administration panel"
 
   tests:
     index:
@@ -78,6 +79,7 @@ en:
       show:
         header: "Question for %{title}"
         answer: "Answer"
+        manage_column: "Managment"
       create:
         success: "Question added"
       update:
