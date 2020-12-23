@@ -15,7 +15,8 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('.admin_panel') %></a>
             <div class="dropdown-menu">
               <%= link_to t('.tests'), admin_tests_path, class: 'dropdown-item' %>
-              <%= link_to t('.create_test'), new_admin_test_path, class: 'dropdown-item' %>
+              <%= link_to t('.create_test'), new_admin_test_path, class: 'dropdown-item' %> 
+              <%= link_to t('.show_gists'), admin_gists_path, class: 'dropdown-item' %>
             </div>
           </li>
         <% else %>

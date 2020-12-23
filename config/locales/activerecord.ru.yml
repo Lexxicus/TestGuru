@@ -8,6 +8,7 @@ ru:
       test_passage: "Прохождение"
       user: "Пользователь"
       category: "Категория"
+      gist: "Gist"
     attributes:
       test:
         title: "Название"

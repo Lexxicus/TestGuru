@@ -43,7 +43,7 @@ gem 'jquery-rails'
 # Networking
 
 gem 'faraday'
-gem "octokit", "~> 4.0"
+gem 'octokit', '~> 4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
