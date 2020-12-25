@@ -10,7 +10,11 @@ class GistQuestionService
   end
 
   def success?
-    @client.last_response == 201 || 200
+    @client.last_response.status == 201 || 200
+  end
+
+  def check(gist)
+    @client.gist(gist.id)
   end
 
   private
