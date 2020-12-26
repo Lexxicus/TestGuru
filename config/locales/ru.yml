@@ -40,6 +40,16 @@ ru:
       level: "Уровень"
       questions: "Количество вопросов"
 
+  gists:
+    create:
+      success: "Gist успешно сохранён!"
+      failure: "Вовремя сохранения gist произошла ошибка"
+      gist_exist: "Gist уже создан %{git_url}"
+      gist_created: "Gist сохранён %{git_url}"
+    save_gist_link_to_db:
+      success: "Ссылка сохранена"
+      failure: "Ошибка сохранения"
+
   test_passages:
     result:
       header: "Тест %{title} завершён."
@@ -48,6 +58,7 @@ ru:
     show:
       header: "Вы проходите тест %{title}"
       test_info: "Всего вопросов: %{total}, вы отвечаете на: %{current}"
+      save_gist: "Сохранить в Gist"
 
   admin:
     tests:
@@ -90,6 +101,15 @@ ru:
         success: "Ответ обновлен"
       destroy:
         success: "Ответ удален"
+    gists:
+      destroy:
+        success: "Gist успешно удалён!"
+      index:
+        header: "Перечень созданных Gist"
+        user: "Email пользователя"
+        question: "Вопрос"
+        action: "Удалить"
+        hash: "Хэш"
     base:
       admin_required:
         message: "Только администратор имеет доступ к данному разделу"
@@ -143,7 +163,10 @@ ru:
       logout: "Выйти"
       signup: "Зарегистрироваться"
       admin_panel: "Панель администратора"
+      user_tests: "Доступные тесты"
+      show_gists: "Gists"
   
   create_new_question: "Создать новый вопрос для теста %{test}"
   edit_question: "Редактировать вопрос для теста %{test}"
+  header: "Вопрос из теста %{title} с сайта TestGuru"
   

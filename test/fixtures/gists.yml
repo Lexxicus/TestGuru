@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  question: one
+  html_url: MyString
+  git_id: MyString
+
+two:
+  user: two
+  question: two
+  html_url: MyString
+  git_id: MyString

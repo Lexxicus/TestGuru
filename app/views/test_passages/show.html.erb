@@ -15,7 +15,11 @@
           <%= b.label %>
         </p>
       <% end %>
-      <p><%= link_to t('helpers.links.back'), tests_path, class: 'btn btn-light' %> <%= form.submit t('helpers.buttons.next'), class: 'btn btn-light' %> </p>
+      <p>
+        <%= link_to t('helpers.links.back'), tests_path, class: 'btn btn-light' %>
+        <%= link_to t('.save_gist'), test_passage_gist_path(@test_passage), method: :post, class: 'btn btn-light' %>
+        <%= form.submit t('helpers.buttons.next'), class: 'btn btn-light' %> 
+      </p>
     <% end %>
   </div>
 </div>
