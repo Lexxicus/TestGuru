@@ -39,6 +39,7 @@ gem 'rails-i18n'
 
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'octicons_helper'
 
 # Networking
 
