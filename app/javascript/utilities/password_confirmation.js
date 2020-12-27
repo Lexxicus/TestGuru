@@ -7,6 +7,11 @@ form = document.querySelector('.validate')
 
     confirmationField.oninput = function() {
 
+      if (confirmationField.value === '') {
+        document.getElementById('message').classList.add('hide')
+        return
+      }
+
       if (passwordField.value != confirmationField.value) {
         document.getElementById('message').classList.remove('hide')
         document.getElementById('message').classList.add('mismatch')
@@ -16,11 +21,6 @@ form = document.querySelector('.validate')
         document.getElementById('message').classList.remove('mismatch')
         document.getElementById('message').classList.add('match')
         document.getElementById('message').innerHTML = 'matching'
-      }
-
-      
-      if (confirmationField.value === '') {
-        document.getElementById('message').classList.add('hide')
       }
     }
   }
