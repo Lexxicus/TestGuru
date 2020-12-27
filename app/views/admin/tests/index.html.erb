@@ -3,16 +3,21 @@
   <p>
     <%= link_to t('helpers.links.create_test'), new_admin_test_path, class: 'btn btn-light' %>
   </p>
-  <thead class="thead-light">
+  <thead class="thead-light sort-by-title pointer">
   <tr>
-    <th scope="col"><%= t('.title') %></th>
+    <th scope="col">
+      <%= t('.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide' %>
+      <%= octicon 'arrow-down', class: 'text-success hide' %>
+    </th>
     <th scope="col"><%= t('.category') %></th>
     <th scope="col"><%= t('.level') %></th>
     <th scope="col"><%= t('.questions') %></th>
     <th scope="col" colspan = 3><%= t('.manage') %></th>
   </tr>
   </thead>
-
-  <%= render @tests %>
- </table>
+  <tbody>
+    <%= render @tests %>
+  </tbody>
+</table>
   
