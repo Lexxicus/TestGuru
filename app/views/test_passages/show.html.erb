@@ -2,6 +2,16 @@
   <div class="card-header">
     <h2 class="float-left "><%= t('.header', title: @test_passage.test.title) %></h2>
   </div>
+
+  <div>
+    <%=
+      content_tag :div, "#{@test_passage.test_pass_percentage}%", style: "display: inline-block",
+                  class: 'progress-bar text-center',
+                  data: { percent: @test_passage.test_pass_percentage }
+    %>
+  </div>
+                  
+
   <div class="card-body">
     <p class="lead"><%= t('.test_info', total: @test_passage.total_question, current: @test_passage.current_question_number) %></p>
     <p> 

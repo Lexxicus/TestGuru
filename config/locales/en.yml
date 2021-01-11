@@ -70,6 +70,8 @@ en:
         header: "Test %{title}"
         question_column: "Question"
         manage_column:  "Managment"
+      form_inline:
+        submit: "Ok"
       new:
         header: "Create new test"
       edit:

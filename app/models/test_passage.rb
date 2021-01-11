@@ -33,6 +33,10 @@ class TestPassage < ApplicationRecord
     percent_of_correct_answers >= PERCENT_TO_PASS
   end
 
+  def test_pass_percentage
+    current_question_number.to_f / total_question.to_f * 100
+  end
+
   private
 
   def before_validation_set_first_question
