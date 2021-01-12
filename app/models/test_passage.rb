@@ -26,7 +26,7 @@ class TestPassage < ApplicationRecord
   end
 
   def percent_of_correct_answers
-    self.correct_questions.to_f / total_question.to_f * 100
+    self.correct_questions / total_question.to_f * 100
   end
 
   def success?
@@ -34,7 +34,7 @@ class TestPassage < ApplicationRecord
   end
 
   def test_pass_percentage
-    current_question_number.to_f / total_question.to_f * 100
+    (current_question_number.to_f - 1) / total_question.to_f * 100
   end
 
   private
