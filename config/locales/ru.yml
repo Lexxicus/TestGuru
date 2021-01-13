@@ -40,6 +40,17 @@ ru:
       level: "Уровень"
       questions: "Количество вопросов"
 
+  feedbacks:
+    new:
+      header: "Обратная связь"
+    form:
+      body: "Сообщение"
+      title: "Тема"
+      send: "Отправить"
+    create:
+      success: "Сообщение отправлено"
+      failure: "Ошибка отправки сообщения"
+
   gists:
     create:
       success: "Gist успешно сохранён!"
@@ -167,6 +178,7 @@ ru:
       admin_panel: "Панель администратора"
       user_tests: "Доступные тесты"
       show_gists: "Gists"
+      feedback: "Обратная связь"
   
   create_new_question: "Создать новый вопрос для теста %{test}"
   edit_question: "Редактировать вопрос для теста %{test}"

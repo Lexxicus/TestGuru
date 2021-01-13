@@ -10,8 +10,9 @@ front = Category.create!(title: 'Frontend')
 back = Category.create!(title: 'Backend')
 mach = Category.create!(title: 'MachineLearning')
 other = Category.create!(title: 'Others')
-user = User.create!({ name: 'Tom', email: 'tom@email.com', age: 36, sex: 'male' })
-user2 = User.create!({ name: 'Jeary', email: 'jeary@email.com', age: 30, sex: 'male' })
+user = User.create!({ name: 'Tom', email: 'tom@email.com', age: 36, sex: 'male', password: '111111' })
+user2 = User.create!({ name: 'Jeary', email: 'jeary@email.com', age: 30, sex: 'male', password: '111111' })
+User.create!({ name: 'Admin', email: 'aa@aaa.aa', age: 30, sex: 'male', password: '111111', type: 'Admin', first_name: 'Limon', last_name: 'Kotovsky' })
 tests = Test.create!([
                        { title: 'Ruby beginer', level: 0, category_id: back.id, author_id: user.id },
                        { title: 'Ruby beginer plus', level: 1, category_id: back.id, author_id: user2.id },
