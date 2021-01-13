@@ -10,8 +10,8 @@ class User < ApplicationRecord
          :confirmable
 
   has_many :test_passages, dependent: :destroy
-  has_many :tests, through: :test_passages, dependent: :destroy
-  has_many :my_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
+  has_many :tests, through: :test_passages
+  has_many :my_tests, class_name: 'Test', foreign_key: 'author_id'
   has_many :gists, dependent: :destroy
 
   def all_tests(level)
