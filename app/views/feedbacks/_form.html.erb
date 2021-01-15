@@ -1,0 +1,14 @@
+<%= form_for :feedback, url: feedbacks_path, locale: true, method: :post do |form| %>
+  <div>
+    <%= form.label :title, t('.title') %>
+    <%= form.text_field :title, class: 'form-control', minlength: 5, maxlength: 64  %>
+  </div>
+  <div>
+    <%= form.label :body, t('.body') %>
+    <%= form.text_area :body, class: 'form-control', minlength: 5, maxlength: 256 %>
+  </div>
+  <div>
+    <br>
+    <%= form.submit t('.send'), class: " btn btn-light" %>
+  </div>
+<% end %>

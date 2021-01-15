@@ -27,6 +27,9 @@
             <a class="nav-link"><%= t('.welcome_user', email: current_user.email)%></a>
           </li>
         <% end %>
+        <li>
+          <%= link_to t('.feedback'), new_feedback_path,  class: 'nav-link' %> 
+        </li>
         <li class="nav-item"> 
           <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'nav-link' %> 
         </li>

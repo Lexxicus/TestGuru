@@ -1,4 +1,4 @@
-
+<% unless test.questions.count == 0 %>
 <tr>
   <td scope="row"><%= test.title %></td>
   <td><%= test.category.title %></td>
@@ -6,3 +6,4 @@
   <td><%= test.questions.count %></td>
   <td><%= button_to t('helpers.buttons.start'), start_test_path(test), class: 'btn btn-light' %></td>
 </tr>
+<% end %>
