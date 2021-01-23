@@ -9,11 +9,13 @@ ru:
       user: "Пользователь"
       category: "Категория"
       gist: "Gist"
+      badge: "Награда"
     attributes:
       test:
         title: "Название"
-        level: "Уровень"
+        level: "Уровень от 0 до 10"
         category: "Категория"
+        timer: "Время прохождения в минутах"
       question:
         body: "Текст вопроса"
       anwser:
@@ -28,6 +30,11 @@ ru:
         password_confirmation: "Подтверждение пароля"
       category:
         title: "Название"
+      badge:
+        name: "Название"
+        image_name: "Изображение"
+        condition: "Условие получения"
+        condition_value: "Значение для условия"
 
     errors:
       messages:

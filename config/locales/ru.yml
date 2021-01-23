@@ -39,6 +39,14 @@ ru:
       category: "Категория"
       level: "Уровень"
       questions: "Количество вопросов"
+  
+  badges:
+    index:
+      header: "Награды"
+      name: "Название"
+      image: "Изображение"
+      ruel: "Условие"
+      user_got: "Полученые награды"
 
   feedbacks:
     new:
@@ -126,6 +134,20 @@ ru:
     base:
       admin_required:
         message: "Только администратор имеет доступ к данному разделу"
+    badges:
+      index:
+        header: "Управление наградами"
+        name: "Название"
+        image: "Изображение"
+        ruel: "Условие"
+        user_got: "Полученые награды"
+        managment: "Управление"
+      new:
+        header: "Создание новой награды"
+      edit:
+        header: "Редактирование награды %{title}"
+      create:
+        success: "Награда создана"
   
   helpers:
     links:
@@ -154,6 +176,7 @@ ru:
       next: "Следующий"
     select:
       prompt: "Выбор"
+    new_badge: "Новая награда"
 
   tests_mailer:
     completed_test:
@@ -179,6 +202,7 @@ ru:
       user_tests: "Доступные тесты"
       show_gists: "Gists"
       feedback: "Обратная связь"
+      show_badges: "Управление наградами"
   
   create_new_question: "Создать новый вопрос для теста %{test}"
   edit_question: "Редактировать вопрос для теста %{test}"

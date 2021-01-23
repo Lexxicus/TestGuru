@@ -25,7 +25,7 @@ class Admin::BadgesController < ApplicationController
   end
 
   def update
-    if @badge.update(test_params)
+    if @badge.update(badge_params)
       redirect_to admin_badges_path
     else
       render :edit
