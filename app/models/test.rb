@@ -17,6 +17,5 @@ class Test < ApplicationRecord
     joins(:category)
       .where(categories: { title: category })
       .order(created_at: :desc)
-      .pluck(:title, :level)
   }
 end

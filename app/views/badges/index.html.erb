@@ -1,0 +1,14 @@
+<h1 class="text-center mt-3"><%= t('.header') %></h1><br>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col"><%= t('.name') %></th>
+      <th scope="col"><%= t('.image') %></th>
+      <th scope="col"><%= t('.ruel') %></th>
+      <th scope="col"><%= t('.user_got') %></th>
+    </tr>
+  </thead>
+
+  <%= render @badges, ids: @user_badge_ids %>
+</table>
+<br>

@@ -1,0 +1,12 @@
+<tbody>
+<tr>
+  <td class="align-middle"><%= badge.name %></td>
+  <td class="align-middle"><%= image_tag("badges/#{badge.image_name}", size: "64x64") %></td>
+  <td class="align-middle"><%= badge.condition_value %></td>
+  <td>
+    <% if badge.users.exists?(current_user.id) %>
+      Получен
+    <% end %>
+  </td>
+</tr>
+</tbody>
