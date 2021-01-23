@@ -65,8 +65,4 @@ class TestPassage < ApplicationRecord
   def test_successfull
     self.completed = success?
   end
-
-  def timer_end
-    created_at + self.test.timer * 60
-  end
 end
