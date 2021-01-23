@@ -203,6 +203,7 @@ ru:
       show_gists: "Gists"
       feedback: "Обратная связь"
       show_badges: "Управление наградами"
+      user_badges: "Награды"
   
   create_new_question: "Создать новый вопрос для теста %{test}"
   edit_question: "Редактировать вопрос для теста %{test}"

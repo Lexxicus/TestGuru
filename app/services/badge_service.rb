@@ -22,9 +22,7 @@ class BadgeService
     return unless category == @test.category.title
 
     tests_ids = Test.test_by_category(@test.category.title).pluck(:id)
-    user_passed_tests = TestPassage.where(user_id: @user, test_id: tests_ids, completed: 'true')
-                                   .distinct.pluck(:test_id).count
-    user_passed_tests == tests_ids.count
+    compare(tests_ids)
   end
 
   def by_level_check(badge)
@@ -32,6 +30,10 @@ class BadgeService
     return unless level == @test.level
 
     tests_ids = Test.where(level: @test.level).pluck(:id)
+    compare(tests_ids)
+  end
+
+  def compare(tests_ids)
     user_passed_tests = TestPassage.where(user_id: @user, test_id: tests_ids, completed: 'true')
                                    .distinct.pluck(:test_id).count
     user_passed_tests == tests_ids.count
