@@ -7,14 +7,18 @@ class BadgeService
 
   def call
     Badge.select do |badge|
-      send("#{badge.condition}_check", badge)
+      add_badge(badge) if send("#{badge.condition}_check", badge)
     end
   end
 
   private
 
+  def add_badge(badge)
+    @user.badges.push(badge)
+  end
+
   def first_try_check(_badge)
-    @test_passage.completed && TestPassage.where(test: @test, user: @user).count == 1
+    TestPassage.where(test: @test, user: @user).count == 1
   end
 
   def by_category_check(badge)
@@ -34,7 +38,7 @@ class BadgeService
   end
 
   def compare(tests_ids)
-    user_passed_tests = TestPassage.where(user_id: @user, test_id: tests_ids, completed: 'true')
+    user_passed_tests = TestPassage.where(user_id: @user, test_id: tests_ids, completed: true)
                                    .distinct.pluck(:test_id).count
     user_passed_tests == tests_ids.count
   end

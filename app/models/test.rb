@@ -18,8 +18,4 @@ class Test < ApplicationRecord
       .where(categories: { title: category })
       .order(created_at: :desc)
   }
-
-  def timer?
-    timer.present?
-  end
 end
