@@ -42,6 +42,20 @@ class TestPassage < ApplicationRecord
     (current_question_number.to_f - 1) / total_question.to_f * 100
   end
 
+  def time_is_over?
+    return unless self.test.timer?
+
+    Time.now >= timer_end
+  end
+
+  def time_left
+    (created_at + test.timer * 60).to_i * 1000
+  end
+
+  def timer_end
+    created_at + self.test.timer * 60
+  end
+
   private
 
   def before_validation_set_first_question
