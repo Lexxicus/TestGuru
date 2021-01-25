@@ -17,6 +17,7 @@
               <%= link_to t('.tests'), admin_tests_path, class: 'dropdown-item' %>
               <%= link_to t('.create_test'), new_admin_test_path, class: 'dropdown-item' %> 
               <%= link_to t('.show_gists'), admin_gists_path, class: 'dropdown-item' %>
+              <%= link_to t('.show_badges'), admin_badges_path, class: 'dropdown-item' %>
             </div>
           </li>
         <% else %>
@@ -25,6 +26,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link"><%= t('.welcome_user', email: current_user.email)%></a>
+          </li>
+          <li class="nav-item">
+            <%= link_to t('.user_badges'), badges_path, class: 'nav-link' %>
           </li>
         <% end %>
         <li>

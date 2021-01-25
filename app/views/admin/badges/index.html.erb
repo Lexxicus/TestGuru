@@ -1,0 +1,17 @@
+<h1 class="text-center mt-3"><%= t('.header') %></h1> 
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col"><%= t('.name') %></th>
+      <th scope="col"><%= t('.image') %></th>
+      <th scope="col"><%= t('.ruel') %></th>
+      <th scope="col"><%= t('.user_got') %></th>
+      <th colspan="2"><%= t('.managment') %></th>
+    </tr>
+    </thead>
+
+    <%= render @badges %>
+  </table>
+
+<%= link_to t('helpers.new_badge'), new_admin_badge_path, class: 'btn btn-light' %>

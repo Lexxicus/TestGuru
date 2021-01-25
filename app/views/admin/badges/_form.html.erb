@@ -1,0 +1,38 @@
+<%= form_with model: [:admin, @badge], local: true, class: 'col-md-4' do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :name, class: 'form-control', placeholder: 'Введите название награды' %>
+  </div>
+
+  <div class="form-group ">
+    <%= form.label :image_name %>
+    <div class="form-check-inline">
+      <% @images.each do |image| %>
+        <div class="col ml-2 text-center">
+          <label class="form-check-label row" for="<%= image %>">
+            <%= image_tag("badges/#{image}", height: "70", class: 'mx-auto d-block') %>
+          </label>
+          <div class="row">
+            <%= form.radio_button :image_name, image %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :condition %>
+    <%= form.select :condition, Badge.conditions.keys.map { |c| [c.humanize, c] }, {}, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :condition_value%>
+    <%= form.text_field :condition_value, id: :condition_value, class: 'form-control', placeholder: 'Введите значение условия' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit class: 'btn btn-success' %>
+  </div>
+<% end %>
