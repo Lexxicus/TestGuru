@@ -38,7 +38,8 @@ ru:
       title: "Название теста"
       category: "Категория"
       level: "Уровень"
-      questions: "Количество вопросов"
+      questions: "Кол-во вопросов"
+      timer: "Таймер"
   
   badges:
     index:
